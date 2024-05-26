@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loader Animation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="loader">
+    <span class="o-1">L</span>
+    <span class="h">O</span>
+    <span class="m">A</span>
+    <span class="y">D</span>
+    <span class="f">I</span>
+    <span class="o">N</span>
+    <span class="d">G</span>
+  </div>
+
+  <!-- Votre contenu HTML ici -->
+  <h1>Mon site</h1>
+  <p>Bienvenue sur mon site.</p>
+</body>
+</html>
+
+
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Assure que le loader est au-dessus du contenu */
+  animation: hideLoader 3s forwards; /* Démarre l'animation pour cacher le loader après 3 secondes */
+}
+
+.loader span {
+  font-size: 30px;
+  display: inline-block;
+  color: #353535;
+  opacity: 0.7;
+  animation: opacity 1.5s ease-in-out infinite;
+}
+
+.loader span.o-1 {
+  animation-delay: 0s;
+}
+
+.loader span.h {
+  animation-delay: 0.25s;
+}
+
+.loader span.m {
+  animation-delay: 0.5s;
+}
+
+.loader span.y {
+  animation-delay: 0.75s;
+}
+
+.loader span.f {
+  animation-delay: 1s;
+}
+
+.loader span.o {
+  animation-delay: 1.25s;
+}
+
+.loader span.d {
+  animation-delay: 1.5s;
+}
+
+@keyframes opacity {
+  0%, 100% {
+    transform: scale(0.1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.9;
+    color: #9356dc;
+  }
+}
+
+@keyframes hideLoader {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+
+
+Explications
+
+    J'ai ajouté position: fixed;, top: 0;, left: 0;, width: 100%;, height: 100%;, et z-index: 9999; au loader pour qu'il couvre toute la page et soit au-dessus du contenu.
+    J'ai ajouté une animation CSS hideLoader qui cachera le loader après 3 secondes.
+
+Ainsi, le loader apparaîtra avant que le contenu de votre page ne soit affiché, puis disparaîtra après 3 secondes.
