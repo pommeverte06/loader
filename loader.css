@@ -64,7 +64,7 @@ body {
   45% {
     transform: scale(1.2);
     opacity: 1;
-    color: #9356dc;
+    color: red;
   }
   100% {
     transform: scale(1);
